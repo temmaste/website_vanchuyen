@@ -26,14 +26,15 @@
 	<?php
 	include "./layout/left_side_bar.php";
 	?>
+
 	<div class="mobile-menu-overlay"></div>
 
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">
 
 			<h1>hello</h1>
-			<!-- Simple Datatable End -->
-			<!-- multiple select row Datatable start -->
+			<!-- Simple Datatable End
+			multiple select row Datatable start -->
 
 			<!-- multiple select row Datatable End -->
 			<!-- Checkbox select Datatable start -->
@@ -44,15 +45,13 @@
 			<!-- Export Datatable End -->
 		</div>
 		<!-- <div class="footer-wrap pd-20 mb-20 card-box">
-					DeskApp - Bootstrap 4 Admin Template By
-					<a href="https://github.com/dropways" target="_blank"
-						>Ankit Hingarajiya</a
-					>
-				</div> -->
+			DeskApp - Bootstrap 4 Admin Template By
+			<a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
+		</div> -->
 	</div>
 	</div>
 
-	</div>
+	</div> -->
 	<?php include "./layout/js.php" ?>
 </body>
 
