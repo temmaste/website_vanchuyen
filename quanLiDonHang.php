@@ -40,7 +40,7 @@
                     <p >Admin >          <span style="font-weight: 1000;">Quản lí đơn hàng</span></p>
                 </div>
             <div class="page-header">
-                    <a style="background-color: #1b00ff;" href="./themPhieuGiaoHang.php" class="btn btn-info">Thêm</a>
+                    <a style="background-color: #1b00ff;" href="./themDonHang.php" class="btn btn-info">Thêm</a>
                     
                 </div>
                 <div class="pd-20">

@@ -37,12 +37,9 @@
             <div class="card-box mb-30">
             <div class="page-header">
                     <h3>Quản lý phân hàng</h3>
-                    <p >Admin >          <span style="font-weight: 1000;">Quản lí phân hàng</span></p>
+                    <p >Admin >          Quản lí phân hàng > <span style="font-weight: 1000;">Thêm</span></p>
                 </div>
-            <div class="page-header">
-                    <a style="background-color: #1b00ff;" href="./themQuanLiPhanHang.php" class="btn btn-info">Thêm</a>
-                    
-                </div>
+       
                 <div class="pd-20">
                     <h4 class="text-blue h4">Danh sách đơn hàng (Đã phân hàng)</h4>
                 </div>
@@ -99,7 +96,22 @@
             <!-- Export Datatable start -->
 
             <!-- Export Datatable End -->
+            <div class="page-header">
+                    <h3>Thêm phân hàng</h3>
+                    <p ><span style="font-weight: 1000;">Chọn khu vực,Kho*</span></p>
+
+                    <form action="">
+                        <select name="" id="">
+                            <option value="">Select</option>
+                        </select>
+                    </form>
+                   
+                    <a  style="background-color: #1b00ff; margin-top: 30px;"class="btn btn-info">Thêm</a>
+                    
+                </div>
+                </div>
         </div>
+     
         <!-- <div class="footer-wrap pd-20 mb-20 card-box">
 					DeskApp - Bootstrap 4 Admin Template By
 					<a href="https://github.com/dropways" target="_blank"

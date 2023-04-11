@@ -15,7 +15,34 @@
 <html>
 
 <?php include "layout/head.php" ?>
+<style>
+    input{
+    
+position: absolute;
+left: 200px;
+width: 746px;
+height: 30px;
 
+
+
+background: #FFFEFE;
+border: 1px solid #000000;
+border-radius: 20px;
+    }
+    textarea{
+        position: absolute;
+left: 200px;
+border-radius: 20px;
+background: #FFFEFE;
+border: 1px solid #000000;
+width: 746px;
+height: 109px;
+    }
+    select{
+        position: absolute;
+left: 200px;
+    }
+</style>
 <body>
 
     <?php include "./layout/pre-loader.php" ?>
@@ -36,24 +63,20 @@
             </div>
             <div class="card-box mb-30">
             <div class="page-header">
-                    <h3>Quản lý phân hàng</h3>
-                    <p >Admin >          <span style="font-weight: 1000;">Quản lí phân hàng</span></p>
+                    <h3>Quản lý Đơn Hàng</h3>
+                    <p >Admin >          Quản lí đơn hàng  >    <span style="font-weight: 1000;">Thêm</span></p>
                 </div>
-            <div class="page-header">
-                    <a style="background-color: #1b00ff;" href="./themQuanLiPhanHang.php" class="btn btn-info">Thêm</a>
-                    
-                </div>
+           
                 <div class="pd-20">
-                    <h4 class="text-blue h4">Danh sách đơn hàng (Đã phân hàng)</h4>
+                    <h4 class="text-blue h4">Danh sách đơn hàng</h4>
                 </div>
                 <div class="pb-20">
                     <table class="data-table table stripe hover nowrap">
                         <thead>
                             <tr>
-                                <th class="table-plus datatable-nosort">Mã</th>
-                                <th>Ngày</th>
-                                <th>Khu vực</th>
-                                <th>Kho</th>
+                                <th class="table-plus datatable-nosort">Mã đơn hàng</th>
+                                <th>Người gửi</th>
+                                <th>Người nhận</th>
                                 <th>Trạng thái</th>
                                 <th></th>
                       
@@ -77,7 +100,7 @@
                                     ?></td>
                                 <td><?php //echo $arrayOb[$i]->getMota()
                                     ?></td>
-                               <td></td>
+                             
                               
                       
                             </tr>
@@ -99,6 +122,37 @@
             <!-- Export Datatable start -->
 
             <!-- Export Datatable End -->
+
+            <div class="page-header" style="position: relative; height:400px">
+            
+                    <h4 style="color: #1b00ff;">Thêm đơn hàng</h4>
+              
+                        <form action="">
+                            <label for="">Tên người gửi: </label>
+                            <input type="text">
+                            <br> <br>
+                            <label for="">Tên người nhận: </label>
+                            <input type="text">
+                            <br> <br>
+                            <label for="">Địa chỉ</label>
+                            <input type="text">
+                            <br>
+                            <label for="">Kho</label>
+                            <select name="" id="">
+                                <option value="">Select</option>
+                            </select>
+                          <br>
+                            <label for="">Mô tả</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </form>
+
+
+
+
+
+                    <a  style="background-color: #1b00ff; position:absolute;bottom:0" href="./themDonHang.php" class="btn btn-info">Thêm</a>
+                    
+                </div>
         </div>
         <!-- <div class="footer-wrap pd-20 mb-20 card-box">
 					DeskApp - Bootstrap 4 Admin Template By
