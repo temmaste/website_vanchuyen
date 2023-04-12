@@ -51,7 +51,7 @@
                             <th>Người gửi</th>
                             <th>Người nhận</th>
                             <th>Trạng thái</th>
-                            <th></th>
+                            <th>Check</th>
 
                         </tr>
                     </thead>

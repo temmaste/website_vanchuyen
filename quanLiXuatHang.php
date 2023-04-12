@@ -31,55 +31,66 @@
                 <!-- dsbook -->
                 <div class="card-box mb-30">
                     <div class="pd-20">
-                        <h4 class="text-blue h4">Đơn hàng xuất qua kho mới</h4>
+                        <h4 class="text-blue h4">Phiếu xuất qua kho mới</h4>
                     </div>
-                    <div class="pb-20">
-                        <table class="data-table table stripe hover nowrap">
-                            <thead>
-                                <tr>
-                                    <th class="table-plus datatable-nosort">Mã</th>
-                                    <th>Ngày</th>
-                                    <th>Kho gửi</th>
-                                    <th>Kho đến</th>
-                                    <th>Trạng thái</th>
-                                    <th>Số xe</th>
-                                    <th class="datatable-nosort"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($data as $res) {
-                                ?>
-                                    <tr>
-                                        <td class="table-plus"><?php
-                                                                echo $res["mack"]
-                                                                ?></td>
-                                        <td><?php echo $res["ngaylapphieu"];
-                                            ?></td>
-                                        <td><?php echo $res["makhogui"];
-                                            ?></td>
-                                        <td><?php echo $res["makhogui"];
-                                            ?></td>
-                                        <td></td>
-                                        <td>
-                                            <?php echo $res["soxe"];
-                                            ?>
-                                        </td>
-                                        <td>
-                                            <input type="checkbox" id="html" value="HTML" style="border-radius: 10%;">
-                                        </td>
-                                    </tr>
-                                <?php }
-                                ?>
+                    <?php if (isset($_GET['msg'])) { ?>
+                        <!-- <p class="alert alert-success alert-autocloseable-success"><?php echo $_GET['msg']; ?></p> -->
+                    <?php }
+                    ?>
+                    <form method="get" action="./controler/delectedPhieuCk.php">
+                        <div class="pb-20">
 
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="page-header">
-                        <a href="themPhieuChuyenKho.php" class="btn btn-info">Thêm</a>
-                        <a href="./addBookPage.php" class="btn btn-info">Sửa</a>
-                        <a href="./addBookPage.php" class="btn btn-info">Xóa</a>
-                    </div>
+                            <table class="data-table table stripe hover nowrap">
+                                <thead>
+                                    <tr>
+                                        <th class="table-plus datatable-nosort">Mã</th>
+                                        <th>Ngày</th>
+                                        <th>Kho gửi</th>
+                                        <th>Kho đến</th>
+                                        <th>Trạng thái</th>
+                                        <th>Số xe</th>
+                                        <th><input id="chk_all" name="chk_all" type="checkbox" /></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($data as $res) {
+                                    ?>
+                                        <tr>
+                                            <td class="table-plus"><?php
+                                                                    echo $res["mack"]
+                                                                    ?></td>
+                                            <td><?php echo $res["ngaylapphieu"];
+                                                ?></td>
+                                            <td><?php echo $res["makhogui"];
+                                                ?></td>
+                                            <td><?php echo $res["makhogui"];
+                                                ?></td>
+                                            <td></td>
+                                            <td>
+                                                <?php echo $res["soxe"];
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" id="check" name="chk_mack[]" class='chkbox' value="<?php
+                                                                                                                            echo $res["mack"]
+                                                                                                                            ?>" style="border-radius: 10%;">
+                                            </td>
+                                        </tr>
+                                    <?php }
+                                    ?>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="page-header">
+                            <a href="themPhieuChuyenKho.php" class="btn btn-info">Thêm</a>
+                            <button type="submit" class="btn btn-info">Xóa</button>
+                            <!-- <a href="./addBookPage.php" class="btn btn-info">Sửa</a>
+                     <a href="./addBookPage.php" class="btn btn-info">Xóa</a> -->
+                        </div>
+                    </form>
+
                 </div>
 
 
@@ -159,17 +170,35 @@
 </body>
 
 </html>
+<script src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#chk_all').click(function() {
+            if (this.checked)
+                $(".chkbox").prop("checked", true);
+            else
+                $(".chkbox").prop("checked", false);
+        });
+    });
+    $(document).ready(function() {
+        $('#delete_form').submit(function(e) {
+            if (!confirm("Confirm Delete?")) {
+                e.preventDefault();
+            }
+        });
+    });
+</script>
 <!-- thong bao delete -->
 <?php
-if (isset($_GET['checkDelete']) && $_GET['checkDelete'] > 0) {
-    $message = "Bạn đã xóa thành công";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-} else if (isset($_GET['checkUpdate']) && $_GET['checkUpdate'] > 0) {
-    $message = "Bạn đã cập nhật thành công";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-} else if (isset($_GET['action']) && $_GET['action'] == "error_delete_exists") {
-    $message = "Thể loại còn sách không thể xóa!";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-}
+// if (isset($_GET['checkDelete']) && $_GET['checkDelete'] > 0) {
+//     $message = "Bạn đã xóa thành công";
+//     echo "<script type='text/javascript'>alert('$message');</script>";
+// } else if (isset($_GET['checkUpdate']) && $_GET['checkUpdate'] > 0) {
+//     $message = "Bạn đã cập nhật thành công";
+//     echo "<script type='text/javascript'>alert('$message');</script>";
+// } else if (isset($_GET['action']) && $_GET['action'] == "error_delete_exists") {
+//     $message = "Thể loại còn sách không thể xóa!";
+//     echo "<script type='text/javascript'>alert('$message');</script>";
+// }
 
 ?>
