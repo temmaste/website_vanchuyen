@@ -20,7 +20,7 @@ if ($status_code == 200) {
     echo '</script>';
     echo '<script type="text/javascript">';
     echo header("Location: ../quanLiXuatHang.php");
-    echo 'alert(" Xoá thành công ")';
+    echo 'alert("$msg")';
     echo '</script>';
 }
 ?>

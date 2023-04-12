@@ -61,15 +61,8 @@
 				</div>
 			</div>
 
-
-
 			<!-- horizontal Basic Forms Start -->
 			<div class="pd-20 card-box mb-30">
-				<div class="clearfix">
-					<div class="pull-left">
-					</div>
-
-				</div>
 				<div class="pb-20 md-20">
 					<form>
 						<div class="border border-dark">
@@ -189,43 +182,12 @@
 											</div>
 										</div>
 									</div>
+								</div>
 
 
 					</form>
 
 				</div>
-
-				<!-- <form action=" ../../controllers/admin/bookController.php" method="post" enctype="multipart/form-data">
-													<div class="form-group">
-														<label>Tên sách</label>
-														<input class="form-control" type="text" name="insert_tensach" placeholder="Nhập tên sách" required />
-													</div>
-													<div class="form-group">
-														<label>Tác giả</label>
-														<input class="form-control" type="text" name="insert_tacgia" placeholder="Nhập tên tác giả" required />
-
-													</div>
-													<div class="form-group">
-														<label>Giá</label>
-														<input class="form-control" type="text" name="insert_gia" placeholder="Nhập Giá Sản Phẩm" required />
-													</div>
-
-
-
-
-
-													<div class="form-group">
-														<label>Mô tả</label>
-														<textarea class="form-control" name="insert_mota" required></textarea>
-													</div>
-
-													<div class="form-group">
-														<label>Chọn hình</label>
-														<input type="file" name="insert_file" class="form-control-file form-control height-auto" />
-													</div>
-													<input class="btn btn-primary" type="submit" name="btn_insert_book" value="Thêm">
-					</form> -->
-
 				<div class="collapse collapse-box" id="horizontal-basic-form1">
 					<div class="code-box">
 						<div class="clearfix">
@@ -237,23 +199,10 @@
 								</code></pre>
 					</div>
 				</div>
+
 			</div>
-			<!-- horizontal Basic Forms End -->
-
-			<!-- Form grid Start -->
-
-			<!-- Form grid End -->
-
-			<!-- Input Validation Start -->
-
-			<!-- Input Validation End -->
-		</div>
-		<!-- <div class="footer-wrap pd-20 mb-20 card-box">
-					DeskApp - Bootstrap 4 Admin Template By
-					<a href="https://github.com/dropways" target="_blank"
-						>Ankit Hingarajiya</a
-					>
-				</div> -->
+			<!-- <div class="footer-wrap pd-20 mb-20 card-box">
+	
 	</div>
 	</div>
 
