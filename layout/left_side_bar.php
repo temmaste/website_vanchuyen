@@ -11,7 +11,6 @@
 	<div class="menu-block customscroll">
 		<div class="sidebar-menu">
 			<ul id="accordion-menu">
-
 				<li>
 					<a href="quanLiXuatHang.php" class="dropdown-toggle no-arrow">
 						<span class="micon bi bi-chat-right-dots"></span><span class="mtext">Quản lí xuất hàng</span>
@@ -23,7 +22,6 @@
 						<span class="micon bi bi-chat-right-dots"></span><span class="mtext">Quản lí đơn hàng</span>
 					</a>
 				</li>
-
 			</ul>
 		</div>
 	</div>

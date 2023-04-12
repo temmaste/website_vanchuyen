@@ -18,13 +18,13 @@
     ?>
     <!-- Api nhan vien -->
     <?php $ch = require("init_curl.php");
-    curl_setopt($ch, CURLOPT_URL, "http://192.168.1.30:3000/nhanvien/getallnhanvien");
+    curl_setopt($ch, CURLOPT_URL, "http://localhost:3000/nhanvien/getallnhanvien");
     $reposn = curl_exec($ch);
     curl_close($ch);
     $data = json_decode($reposn, true); ?>
     <!-- Api don hang -->
     <?php $ch1 = require("init_curl.php");
-    curl_setopt($ch1, CURLOPT_URL, "http://192.168.1.30:3000/donhang/getall");
+    curl_setopt($ch1, CURLOPT_URL, "http://localhost:3000/donhang/getall");
     $reposn1 = curl_exec($ch1);
     curl_close($ch1);
     $data1 = json_decode($reposn1, true); ?>
@@ -34,6 +34,7 @@
     $reposnk = curl_exec($chk);
     curl_close($chk);
     $datak = json_decode($reposnk, true); ?>
+
 
     <div class="mobile-menu-overlay"></div>
 
@@ -46,7 +47,7 @@
                         <h4 class="text-blue h4">Thêm phiếu chuyển kho</h4>
                     </div>
                     <div class="pb-20 md-20">
-                        <form>
+                        <form method="get" action="./controler/create.php">
                             <div class="row mx-2">
                                 <div class="col-md-4">
                                     <label for="">Người lập phiếu</label>
@@ -61,25 +62,24 @@
                             </div>
                             <div class="row mx-2  mb-4">
                                 <div class="col-md-4 mb-3">
-                                    <select name="xe" id="xe-select" class="form-control">
+                                    <select id="nguoilapphieu" name="nguoilapphieu" class="form-control">
                                         <?php
                                         foreach ($data as $res) {
 
                                         ?>
-                                            <option value='$res[" tennv"]'><?php echo $res["tennv"] ?></option>
+                                            <option value=<?php echo $res["manv"] ?>><?php echo $res["tennv"] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4 mb-3">
-
-                                    <input type="date" class="form-control">
+                                    <input type="date" class="form-control" id="ngaylapphieu" name="ngaylapphieu" value="date">
                                 </div>
                                 <div class=" col-md-4 mb-3">
-                                    <select name="xe" id="xe-select" class="form-control">
-                                        <option value="">1</option>
-                                        <option value="1">2</option>
-                                        <option value="2">3</option>
-                                        <option value="3">4</option>
+                                    <select name="soxe" id="soxe" class="form-control">
+                                        <option values="1">1</option>
+                                        <option values="2">2</option>
+                                        <option values="2">3</option>
+                                        <option values="3">4</option>
 
                                     </select>
                                 </div>
@@ -94,28 +94,29 @@
                             </div>
                             <div class=" row row mx-2 mb-4">
                                 <div class="col-md-4 mb-3">
-                                    <select name="xe" id="xe-select" class="form-control">
+                                    <select id="makhogui" name="makhogui" class="form-control">
                                         <?php
                                         foreach ($datak as $resk) {
 
                                         ?>
-                                            <option value='$resk[" tenk"]'><?php echo $resk["tenk"] ?></option>
+                                            <option value=<?php echo $resk["mak"] ?>><?php echo $resk["tenk"] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class=" col-md-4 mb-3">
-                                    <select name="xe" id="xe-select" class="form-control">
+                                    <select name="makhoden" id="makhoden" class="form-control">
                                         <?php
                                         foreach ($datak as $resk) {
 
                                         ?>
-                                            <option value='$resk[" tenk"]'><?php echo $resk["tenk"] ?></option>
+                                            <option value=<?php echo $resk["mak"] ?>><?php echo $resk["tenk"] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class=" col-md-4">
                                     <a href="./themHang.php" class="btn btn-info" style="width: 120px;">Thêm hàng</a>
-                                    <a href="" class="btn btn-info" style="width: 120px;">Lập phiếu</a>
+                                    <button type="submit" class="btn btn-info" style="width: 120px;">Lập phiếu</button>
+                                    <!-- <a href="" class="btn btn-info" style="width: 120px;">Lập phiếu</a> -->
                                 </div>
                             </div>
                         </form>
