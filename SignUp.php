@@ -62,8 +62,8 @@
                         <div class="divider d-flex align-items-center my-1">
                             <p class="text-center fw-bold mx-3 mb-0 text-muted">Hoặc</p>
                         </div>
-
-                        <button onclick="window.location.href='../website_vanchuyen/SignIn.php'" class="btn btn-primary btn-lg btn-block"> Sign in</button>
+                        
+                        <button type="button" onclick="window.location.href='../website_vanchuyen/SignIn.php'" class="btn btn-primary btn-lg btn-block"> Sign in</button>
                     </form>
                 </div>
             </div>

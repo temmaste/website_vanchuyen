@@ -38,7 +38,6 @@
             </div>
             <div class="page-header">
                 <a style="background-color: #1b00ff;" href="./themDonHang.php" class="btn btn-info">Thêm</a>
-
             </div>
             <div class="pd-20">
                 <h4 class="text-blue h4">Danh sách đơn hàng</h4>
@@ -51,8 +50,7 @@
                             <th>Người gửi</th>
                             <th>Người nhận</th>
                             <th>Trạng thái</th>
-                            <th>Check</th>
-
+                            <th><input id="chk_all" name="chk_all" type="checkbox" /></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,11 +66,11 @@
                                     ?></td>
                                 <td><?php //echo currency_format_d($arrayOb[$i]->getGia());
                                     ?></td>
-                                <td><?php //echo $arrayOb[$i]->getMota()
-                                    ?></td>
-
-
-
+                                <td>
+                                    <input type="checkbox" id="check" name="chk_madh[]" class='chkbox' value="<?php
+                                                                                                                echo $res1["magh"]
+                                                                                                                ?>" style="border-radius: 10%;">
+                                </td>
                             </tr>
                         <?php }
                         ?>
@@ -82,23 +80,9 @@
             </div>
 
         </div>
-        <!-- Simple Datatable End -->
-        <!-- multiple select row Datatable start -->
 
-        <!-- multiple select row Datatable End -->
-        <!-- Checkbox select Datatable start -->
-
-        <!-- Checkbox select Datatable End -->
-        <!-- Export Datatable start -->
-
-        <!-- Export Datatable End -->
     </div>
-    <!-- <div class="footer-wrap pd-20 mb-20 card-box">
-					DeskApp - Bootstrap 4 Admin Template By
-					<a href="https://github.com/dropways" target="_blank"
-						>Ankit Hingarajiya</a
-					>
-				</div> -->
+
     </div>
     </div>
 
@@ -107,6 +91,24 @@
 </body>
 
 </html>
+<script src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#chk_all').click(function() {
+            if (this.checked)
+                $(".chkbox").prop("checked", true);
+            else
+                $(".chkbox").prop("checked", false);
+        });
+    });
+    $(document).ready(function() {
+        $('#delete_form').submit(function(e) {
+            if (!confirm("Confirm Delete?")) {
+                e.preventDefault();
+            }
+        });
+    });
+</script>
 <!-- thong bao delete -->
 <?php
 if (isset($_GET['checkDelete']) && $_GET['checkDelete'] > 0) {

@@ -15,9 +15,6 @@
 					<a href="quanLiXuatHang.php" class="dropdown-toggle no-arrow">
 						<span class="micon bi bi-chat-right-dots"></span><span class="mtext">Quản lí xuất hàng</span>
 					</a>
-					<a href="quanLiPhanHang.php" class="dropdown-toggle no-arrow">
-						<span class="micon bi bi-chat-right-dots"></span><span class="mtext">Quản lí phân hàng</span>
-					</a>
 					<a href="quanLiDonHang.php" class="dropdown-toggle no-arrow">
 						<span class="micon bi bi-chat-right-dots"></span><span class="mtext">Quản lí đơn hàng</span>
 					</a>

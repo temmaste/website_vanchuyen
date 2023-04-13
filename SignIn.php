@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 bg-light my-auto" style="min-height: 500px; border-radius: 10%;">
                     <h3 class="my-2 text-center text-primary">Đăng nhập</h3>
-                    <form method="get" action="./controler/create.php" class="my-5">
+                    <form method="get" action="./controler/signIn.php" class="my-5">
                         <!-- Email input -->
                         <div class="form-outline mt-5">
                             <input type="text" id="sdt" name="sdt" class="form-control form-control-lg" placeholder="Tên đăng nhập" />
@@ -54,8 +54,8 @@
                         <div class="divider d-flex align-items-center my-1">
                             <p class="text-center fw-bold mx-3 mb-0 text-muted">Hoặc</p>
                         </div>
-
-                        <button onclick="window.location.href='../website_vanchuyen/SignIn.php'" class="btn btn-primary btn-lg btn-block"> Sign up</button>
+                        <a href="../website_vanchuyen/SignUp.php" class="btn btn-primary btn-lg btn-block">Sign up</a>
+                        <!-- <button onclick="window.location.href='../website_vanchuyen/SignIn.php'" class="btn btn-primary btn-lg btn-block"> Sign up</button> -->
                     </form>
                 </div>
             </div>

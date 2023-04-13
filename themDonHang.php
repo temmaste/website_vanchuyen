@@ -54,6 +54,9 @@
     <?php
     include "./layout/left_side_bar.php";
     ?>
+    <?php
+    // $url = require("./.env");
+    ?>
     <!-- Api nhan vien -->
     <?php $ch = require("init_curl.php");
     curl_setopt($ch, CURLOPT_URL, "http://localhost:3000/nhanvien/getallnhanvien");
@@ -171,16 +174,16 @@
                             </div>
                             <div class="row mx-2  mb-4">
                                 <div class="col-md-3 mb-3">
-                                    <input type="date" class="form-control" name="ngaytaodon">
+                                    <input type="date" class="form-control" id="ngaytaodon" name="ngaytaodon">
                                 </div>
                                 <div class="col-md-3 mb-3">
-                                    <input type="text" class="form-control" name="diachi">
+                                    <input type="text" class="form-control" id="diachi" name="diachi">
                                 </div>
                                 <div class=" col-md-3 mb-3">
-                                    <input type="text" class="form-control" name="khoiluong">
+                                    <input type="text" class="form-control" id="khoiluong" name="khoiluong">
                                 </div>
                                 <div class=" col-md-3 mb-3">
-                                    <input type="text" class="form-control" name="ghichu">
+                                    <input type="text" class="form-control" id="ghichu" name="ghichu">
                                 </div>
                             </div>
 
@@ -188,11 +191,17 @@
                                 <div class="col-md-3">
                                     <label for="">Giá trị</label>
                                 </div>
+                                <div class="col-md-3">
+                                    <label for="">Khách hàng</label>
+                                </div>
 
                             </div>
                             <div class="row mx-2  mb-4">
                                 <div class="col-md-3 mb-3">
-                                    <input type="text" class="form-control" name="giatridh">
+                                    <input type="text" class="form-control" id="giatridh" name="giatridh">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <input type="text" class="form-control" id="makh" name="makh">
                                 </div>
 
                             </div>
@@ -214,7 +223,7 @@
                             </div>
                             <div class="row mx-2  mb-4">
                                 <div class="col-md-4 mb-3">
-                                    <select id="nguoilapphieu" name="nguoilapphieu" class="form-control">
+                                    <select id="manv" name="manv" class="form-control">
                                         <?php
                                         foreach ($data as $res) {
 
@@ -224,7 +233,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <select id="makhogui" name="makhogui" class="form-control">
+                                    <select id="mak" name="mak" class="form-control">
                                         <?php
                                         foreach ($datak as $resk) {
 
@@ -234,7 +243,7 @@
                                     </select>
                                 </div>
                                 <div class=" col-md-4 mb-3">
-                                    <select id="makhogui" name="makhogui" class="form-control">
+                                    <select id="idtrangthai" name="idtrangthai" class="form-control">
                                         <?php
                                         foreach ($datatt as $restt) {
 
@@ -247,14 +256,10 @@
 
                         </div>
                         <div class=" col-md-4 mt-4">
-                            <button type="submit" class="btn btn-info" style="width: 120px;">Lập phiếu</button>
+                            <button type="submit" class="btn btn-info" style="width: 120px;">Thêm</button>
                         </div>
-
                     </form>
                 </div>
-
-
-
             </div>
             <?php include "./layout/js.php" ?>
 </body>

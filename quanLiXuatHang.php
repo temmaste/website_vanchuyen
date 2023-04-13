@@ -39,7 +39,6 @@
                     ?>
                     <form method="get" action="./controler/delectedPhieuCk.php">
                         <div class="pb-20">
-
                             <table class="data-table table stripe hover nowrap">
                                 <thead>
                                     <tr>
@@ -108,57 +107,63 @@
                 <div class="pd-20">
                     <h4 class="text-blue h4">Đơn hàng xuất đến khách hàng</h4>
                 </div>
-                <div class="pb-20">
-                    <table class="data-table table stripe hover nowrap">
-                        <thead>
-                            <tr>
-                                <th class="table-plus datatable-nosort">Mã</th>
-                                <th>Ngày</th>
-                                <th>Kho gửi</th>
-                                <th>Nguời gửi</th>
-                                <th>Người nhận</th>
-                                <th>Shiper</th>
-                                <th>Trạng thái</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            foreach ($data1 as $res1) {
-
-                            ?>
+                <form method="get" action="./controler/delectedPhieuGh.php">
+                    <div class="pb-20">
+                        <table class="data-table table stripe hover nowrap">
+                            <thead>
                                 <tr>
-                                    <td class="table-plus"><?php echo $res1["magh"];
-                                                            ?></td>
-                                    <td><?php echo $res1["ngaylapphieu"];
-                                        ?></td>
-                                    <td><?php
-                                        ?></td>
-                                    <td><?php echo $res1["magh"];
-                                        ?></td>
-                                    <td><?php echo $res1["nguoinhan"];
-                                        ?></td>
-                                    <td>
-                                        <?php echo $res1["shipper"];
-                                        ?>< </td>
-                                    <td>
-
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" id="html" value="HTML" style="border-radius: 10%;">
-                                    </td>
+                                    <th class="table-plus datatable-nosort">Mã</th>
+                                    <th>Ngày</th>
+                                    <th>Kho gửi</th>
+                                    <th>Nguời gửi</th>
+                                    <th>Người nhận</th>
+                                    <th>Shiper</th>
+                                    <th>Trạng thái</th>
+                                    <th><input id="chk_all1" name="chk_all1" type="checkbox" /></th>
                                 </tr>
-                            <?php }
-                            ?>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($data1 as $res1) {
 
-                        </tbody>
-                    </table>
-                </div>
-                <div class="page-header">
-                    <a href="./themPhieuGiaoHang.php" class="btn btn-info">Thêm</a>
-                    <a href="./addBookPage.php" class="btn btn-info">Xóa</a>
-                    <a href="./addBookPage.php" class="btn btn-info">Sửa</a>
-                </div>
+                                ?>
+                                    <tr>
+                                        <td class="table-plus"><?php echo $res1["magh"];
+                                                                ?></td>
+                                        <td><?php echo $res1["ngaylapphieu"];
+                                            ?></td>
+                                        <td><?php
+                                            ?></td>
+                                        <td><?php echo $res1["magh"];
+                                            ?></td>
+                                        <td><?php echo $res1["nguoinhan"];
+                                            ?></td>
+                                        <td>
+                                            <?php echo $res1["shipper"];
+                                            ?>< </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" id="check" name="chk_magh[]" class='chkbox1' value="<?php
+                                                                                                                        echo $res1["magh"]
+                                                                                                                        ?>" style="border-radius: 10%;">
+                                        </td>
+                                    </tr>
+                                <?php }
+                                ?>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="page-header">
+                        <a href="./themPhieuGiaoHang.php" class="btn btn-info">Thêm</a>
+                        <button type="submit" class="btn btn-info">Xóa</button>
+                        <!-- <a href="" class="btn btn-info">Xóa</a> -->
+                        <!-- <a href="" class="btn btn-info">Sửa</a> -->
+                    </div>
+                </form>
+
             </div>
 
         </div>
@@ -178,6 +183,14 @@
                 $(".chkbox").prop("checked", true);
             else
                 $(".chkbox").prop("checked", false);
+        });
+    });
+    $(document).ready(function() {
+        $('#chk_all1').click(function() {
+            if (this.checked)
+                $(".chkbox1").prop("checked", true);
+            else
+                $(".chkbox1").prop("checked", false);
         });
     });
     $(document).ready(function() {
