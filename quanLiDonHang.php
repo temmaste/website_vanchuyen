@@ -64,7 +64,7 @@
                                     ?></td>
                                 <td><?php echo $res["tenkh"]
                                     ?></td>
-                                <td><?php //echo currency_format_d($arrayOb[$i]->getGia());
+                                <td><?php echo $res["tentrangthai"]
                                     ?></td>
                                 <td>
                                     <input type="checkbox" id="check" name="chk_madh[]" class='chkbox' value="<?php
@@ -74,7 +74,6 @@
                             </tr>
                         <?php }
                         ?>
-
                     </tbody>
                 </table>
             </div>

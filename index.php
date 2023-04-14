@@ -21,10 +21,10 @@
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">
 
-			<h1>hello</h1>
-			
+			<img src="./public/images/Screenshot 2023-04-13 140820.png" alt="" style="width:100% ;height: 100%;">
+
 		</div>
-		
+
 	</div>
 	</div>
 
