@@ -153,115 +153,163 @@
             <div class="pd-20 card-box mb-30">
                 <div class="pb-20 md-20">
                     <form method="post" action="./controler/addDonHang.php">
+                        <div class="border border-dark">
+                            <p class="text-primary">Người gửi</p>
+                            <div class="row mx-2">
+                                <div class="col-md-4">
+                                    <label for="">Họ và tên</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="">Số điện thoại</label>
+                                </div>
+
+                            </div>
+                            <div class="row mx-2  mb-4">
+                                <div class="col-md-4 mb-3">
+
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-md-4 mb-3">
+
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" border border-dark mt-4">
+                            <p class="text-primary">Người nhận</p>
+                            <div class="row mx-2">
+                                <div class="col-md-4">
+                                    <label for="">Họ và tên</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="">Số điện thoại</label>
+                                </div>
+                                <div class=" col-md-4">
+                                    <label for="">Địa chỉ</label>
+                                </div>
+                            </div>
+                            <div class="row mx-2  mb-4">
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
                         <div class=" border border-dark mt-4">
                             <p class="text-primary">Thông tin kiện hàng</p>
                             <div class="row mx-2">
-                                <div class="col-md-3">
-                                    <label for="">Ngày tạo đơn</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="">Địa chỉ</label>
-
-                                </div>
-                                <div class=" col-md-3">
-                                    <label for="">Thể tích/ Khối lượng</label>
-
-                                </div>
-                                <div class=" col-md-3">
-                                    <label for="">Ghi chú</label>
-
-                                </div>
-                            </div>
-                            <div class="row mx-2  mb-4">
-                                <div class="col-md-3 mb-3">
-                                    <input type="date" class="form-control" id="ngaytaodon" name="ngaytaodon">
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <input type="text" class="form-control" id="diachi" name="diachi">
-                                </div>
-                                <div class=" col-md-3 mb-3">
-                                    <input type="text" class="form-control" id="khoiluong" name="khoiluong">
-                                </div>
-                                <div class=" col-md-3 mb-3">
-                                    <input type="text" class="form-control" id="ghichu" name="ghichu">
-                                </div>
-                            </div>
-
-                            <div class="row mx-2">
-                                <div class="col-md-3">
-                                    <label for="">Giá trị</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="">Khách hàng</label>
-                                </div>
-
-                            </div>
-                            <div class="row mx-2  mb-4">
-                                <div class="col-md-3 mb-3">
-                                    <input type="text" class="form-control" id="giatridh" name="giatridh">
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <input type="text" class="form-control" id="makh" name="makh">
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class=" border border-dark mt-4">
-                            <p class="text-primary">Khác</p>
-                            <div class="row mx-2">
                                 <div class="col-md-4">
-                                    <label for="">Người tạo đơn</label>
+                                    <label for="">Tên hàng</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="">Kho</label>
+                                    <label for="">Loại hàng</label>
+
                                 </div>
                                 <div class=" col-md-4">
-                                    <label for="">Trạng thái</label>
-
+                                    <label for="">Thể tích/ Khối lượng</label>
                                 </div>
                             </div>
                             <div class="row mx-2  mb-4">
                                 <div class="col-md-4 mb-3">
-                                    <select id="manv" name="manv" class="form-control">
-                                        <?php
-                                        foreach ($data as $res) {
 
-                                        ?>
-                                            <option value=<?php echo $res["manv"] ?>><?php echo $res["tennv"] ?></option>
-                                        <?php } ?>
-                                    </select>
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <select id="mak" name="mak" class="form-control">
-                                        <?php
-                                        foreach ($datak as $resk) {
 
-                                        ?>
-                                            <option value=<?php echo $resk["mak"] ?>><?php echo $resk["tenk"] ?></option>
-                                        <?php } ?>
-                                    </select>
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class=" col-md-4 mb-3">
-                                    <select id="idtrangthai" name="idtrangthai" class="form-control">
-                                        <?php
-                                        foreach ($datatt as $restt) {
 
-                                        ?>
-                                            <option value=<?php echo $restt["idtrangthai"] ?>><?php echo $restt["tentrangthai"] ?></option>
-                                        <?php } ?>
-                                    </select>
+                                    <input type="text" class="form-control">
                                 </div>
                             </div>
+                            <div class=" row mx-2">
+                                <div class="col-md-4">
+                                    <label for="">Giá trị</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="">Ngày gửi</label>
+                                </div>
+                            </div>
+                            <div class="row mx-2  mb-4">
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-md-4 mb-3">
+
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+
+                <div class=" border border-dark mt-4">
+                    <p class="text-primary">Khác</p>
+                    <div class="row mx-2">
+                        <div class="col-md-4">
+                            <label for="">Người tạo đơn</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="">Kho</label>
+                        </div>
+                        <div class=" col-md-4">
+                            <label for="">Trạng thái</label>
 
                         </div>
-                        <div class=" col-md-4 mt-4">
-                            <button type="submit" class="btn btn-info" style="width: 120px;">Thêm</button>
+                    </div>
+                    <div class="row mx-2  mb-4">
+                        <div class="col-md-4 mb-3">
+                            <select id="manv" name="manv" class="form-control">
+                                <?php
+                                foreach ($data as $res) {
+
+                                ?>
+                                    <option value=<?php echo $res["manv"] ?>><?php echo $res["tennv"] ?></option>
+                                <?php } ?>
+                            </select>
                         </div>
-                    </form>
+                        <div class="col-md-4 mb-3">
+                            <select id="mak" name="mak" class="form-control">
+                                <?php
+                                foreach ($datak as $resk) {
+
+                                ?>
+                                    <option value=<?php echo $resk["mak"] ?>><?php echo $resk["tenk"] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class=" col-md-4 mb-3">
+                            <select id="idtrangthai" name="idtrangthai" class="form-control">
+                                <?php
+                                foreach ($datatt as $restt) {
+
+                                ?>
+                                    <option value=<?php echo $restt["idtrangthai"] ?>><?php echo $restt["tentrangthai"] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class=" col-md-4 mt-4">
+                    <button type="submit" class="btn btn-info" style="width: 120px;">Thêm</button>
                 </div>
             </div>
-            <?php include "./layout/js.php" ?>
+
+        </div>
+
+
+        </form>
+    </div>
+    </div>
+    <?php include "./layout/js.php" ?>
 </body>
 
 </html>

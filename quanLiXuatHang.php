@@ -1,4 +1,5 @@
 <?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -6,10 +7,11 @@
 <?php include "layout/head.php" ?>
 
 <body>
+
     <!-- Phieu chuyen kho -->
     <?php
     $ch = require("init_curl.php");
-    curl_setopt($ch, CURLOPT_URL, "http://localhost:3000/phieuchuyenkho/getallphieuchuyenkho");
+    curl_setopt($ch, CURLOPT_URL, "https://awrazer.online/phieuchuyenkho/getallphieuchuyenkho");
     $reposn = curl_exec($ch);
     curl_close($ch);
     $data = json_decode($reposn, true);

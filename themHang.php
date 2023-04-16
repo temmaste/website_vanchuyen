@@ -73,7 +73,6 @@
 								</div>
 								<div class="col-md-4">
 									<label for="">Số điện thoại</label>
-
 								</div>
 								<div class=" col-md-4">
 									<label for="">Địa chỉ</label>

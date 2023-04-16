@@ -1,12 +1,15 @@
 <?php
 ?>
+<?php
+include("auth.php"); ?>
 <!DOCTYPE html>
 <html>
 
 <?php include "layout/head.php" ?>
 
 <body>
-
+	<?php session_start();
+	$sdt = $_SESSION['sdt']; ?>
 	<?php include "./layout/pre-loader.php" ?>
 	<?php include "./layout/header.php" ?>
 
@@ -15,7 +18,8 @@
 	<?php
 	include "./layout/left_side_bar.php";
 	?>
-
+	<?php
+	?>
 	<div class="mobile-menu-overlay"></div>
 
 	<div class="main-container">

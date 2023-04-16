@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 // include "../../utils/connectDB.php";
 // include "../../utils/curency_format.php";
 // include "../../model/bookModel.php";
@@ -30,58 +30,60 @@
 
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
-        
-        <i class="bi bi-house-check"></i>
 
-            </div>
-            <div class="card-box mb-30" style="padding-bottom: 300px;">
+            <i class="bi bi-house-check"></i>
+
+        </div>
+        <div class="card-box mb-30" style="padding-bottom: 300px;">
             <div class="page-header">
-                    <h3>Xem thông tin đơn hàng</h3>
-                    <p >Admin >          Quản lí đơn hàng >           <span style="font-weight: 1000;">Chi tiết tin đơn hàng</span></p>
-                </div>
-       
-                <div class="pd-20" style="margin-bottom: 70px;">
-                   <p>Nhân viên giao hàng: XXX</p>
-                   <p>Mã đơn hàng: 123</p>
-                </div>
-                <hr>
-                <div style="  display: flex; text-align: center;
+                <h3>Xem thông tin đơn hàng</h3>
+                <p>Admin > Quản lí đơn hàng > <span style="font-weight: 1000;">Chi tiết tin đơn hàng</span></p>
+            </div>
+
+            <div class="pd-20" style="margin-bottom: 70px;">
+                <p>Nhân viên giao hàng: XXX</p>
+                <p>Mã đơn hàng: 123</p>
+            </div>
+            <hr>
+            <div style="  display: flex; text-align: center;
     justify-content:space-around;">
                 <div><i class="bi bi-hourglass-split"></i>
-                    <br>Đang xử lý</div>
-              
+                    <br>Đang xử lý
+                </div>
+
                 <div><i class="bi bi-house-door-fill"></i>
-<br>Đã đóng gói</div>
-            
+                    <br>Đã đóng gói
+                </div>
+
                 <div> <i class="bi bi-truck"></i> <br>Đang vận chuyển</div>
-          
+
                 <div><i class="bi bi-check-lg"></i> <br>Đã giao hàng</div>
-
-               
-                </div>
-                <div style=" display:flex;    justify-content: center;    margin-top: 56px;">
-                <button   style="width: 200px;height: 36px;background: #100CBB; color:#fff;
-border-radius: 20px;">  Cập nhật trạng thái</button>
-                </div>
-               
-
-
-
 
 
             </div>
-            <!-- Simple Datatable End -->
-            <!-- multiple select row Datatable start -->
+            <div style=" display:flex;    justify-content: center;    margin-top: 56px;">
+                <button style="width: 200px;height: 36px;background: #100CBB; color:#fff;
+border-radius: 20px;"> Cập nhật trạng thái</button>
+            </div>
 
-            <!-- multiple select row Datatable End -->
-            <!-- Checkbox select Datatable start -->
 
-            <!-- Checkbox select Datatable End -->
-            <!-- Export Datatable start -->
 
-            <!-- Export Datatable End -->
+
+
+
         </div>
-        <!-- <div class="footer-wrap pd-20 mb-20 card-box">
+        <!-- Simple Datatable End -->
+        <!-- multiple select row Datatable start -->
+
+        <!-- multiple select row Datatable End -->
+        <!-- Checkbox select Datatable start -->
+
+        <!-- Checkbox select Datatable End -->
+        <!-- Export Datatable start -->
+
+        <!-- Export Datatable End -->
+    </div>
+    <!-- <div class="footer-wrap pd-20 mb-20 card-box">
 					DeskApp - Bootstrap 4 Admin Template By
 					<a href="https://github.com/dropways" target="_blank"
 						>Ankit Hingarajiya</a

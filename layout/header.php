@@ -155,12 +155,13 @@
 						<img src="../../public/images/photo5.jpg" alt="" />
 					</span>
 					<span class="user-name"><?php
-											// if(isset($_SESSION['username'])&&$_SESSION['role']==1){
-											// 	echo $_SESSION['username'];
+											if (isset($_SESSION['sdt'])) {
+												echo $_SESSION['sdt'];
+											}
 											// }else{
-											echo 'Admin';
-											// }
-											// 
+											// echo 'Admin';
+											// // }
+											// // 
 											?>
 					</span>
 				</a>

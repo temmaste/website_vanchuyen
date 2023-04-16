@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,71 +43,75 @@
                 <h4 class="text-blue h4">Danh sách đơn hàng</h4>
             </div>
             <div class="pb-20">
-                <table class="data-table table stripe hover nowrap">
-                    <thead>
-                        <tr>
-                            <th class="table-plus datatable-nosort">Mã đơn hàng</th>
-                            <th>Người gửi</th>
-                            <th>Người nhận</th>
-                            <th>Trạng thái</th>
-                            <th><input id="chk_all" name="chk_all" type="checkbox" /></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        foreach ($data as $res) {
-                        ?>
+                <form method="get" action="./controler/delectedDonHang.php">
+                    <table class="data-table table stripe hover nowrap">
+                        <thead>
                             <tr>
-                                <td class="table-plus"><?php echo $res["madh"]
-                                                        ?></td>
-                                <td><?php echo $res["tenkh"]
-                                    ?></td>
-                                <td><?php echo $res["tenkh"]
-                                    ?></td>
-                                <td><?php echo $res["tentrangthai"]
-                                    ?></td>
-                                <td>
-                                    <input type="checkbox" id="check" name="chk_madh[]" class='chkbox' value="<?php
-                                                                                                                echo $res1["magh"]
-                                                                                                                ?>" style="border-radius: 10%;">
-                                </td>
+                                <th class="table-plus datatable-nosort">Mã đơn hàng</th>
+                                <th>Người gửi</th>
+                                <th>Người nhận</th>
+                                <th>Trạng thái</th>
+                                <th><input id="chk_all" name="chk_all" type="checkbox" /></th>
                             </tr>
-                        <?php }
-                        ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($data as $res) {
+                            ?>
+                                <tr>
+                                    <td class="table-plus"><?php echo $res["madh"]
+                                                            ?></td>
+                                    <td><?php echo $res["tenkh"]
+                                        ?></td>
+                                    <td><?php echo $res["tenkh"]
+                                        ?></td>
+                                    <td><?php echo $res["tentrangthai"]
+                                        ?></td>
+                                    <td>
+                                        <input type="checkbox" id="check" name="chk_madh[]" class='chkbox' value="<?php
+                                                                                                                    echo $res["madh"]
+                                                                                                                    ?>" style="border-radius: 10%;">
+                                    </td>
+                                </tr>
+                            <?php }
+                            ?>
+                        </tbody>
+                    </table>
+                    <div class="page-header">
+                        <input id="submit" name="submit" type="submit" class="btn btn-info" value="Delete Selected Row(s)" />
+                    </div>
+                </form>
             </div>
 
         </div>
 
     </div>
-
     </div>
     </div>
-
     </div>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#chk_all').click(function() {
+                if (this.checked)
+                    $(".chkbox").prop("checked", true);
+                else
+                    $(".chkbox").prop("checked", false);
+            });
+        });
+        $(document).ready(function() {
+            $('#delete_form').submit(function(e) {
+                if (!confirm("Confirm Delete?")) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
     <?php include "./layout/js.php" ?>
 </body>
 
 </html>
-<script src="js/jquery-1.10.2.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#chk_all').click(function() {
-            if (this.checked)
-                $(".chkbox").prop("checked", true);
-            else
-                $(".chkbox").prop("checked", false);
-        });
-    });
-    $(document).ready(function() {
-        $('#delete_form').submit(function(e) {
-            if (!confirm("Confirm Delete?")) {
-                e.preventDefault();
-            }
-        });
-    });
-</script>
+
 <!-- thong bao delete -->
 <?php
 if (isset($_GET['checkDelete']) && $_GET['checkDelete'] > 0) {
