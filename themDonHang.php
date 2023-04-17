@@ -15,34 +15,6 @@
 <html>
 
 <?php include "layout/head.php" ?>
-<!-- <style>
-    input {
-
-        position: absolute;
-        left: 200px;
-        width: 746px;
-        height: 30px;
-
-        background: #FFFEFE;
-        border: 1px solid #000000;
-        border-radius: 20px;
-    }
-
-    textarea {
-        position: absolute;
-        left: 200px;
-        border-radius: 20px;
-        background: #FFFEFE;
-        border: 1px solid #000000;
-        width: 746px;
-        height: 109px;
-    }
-
-    select {
-        position: absolute;
-        left: 200px;
-    }
-</style> -->
 
 <body>
 
@@ -55,29 +27,29 @@
     include "./layout/left_side_bar.php";
     ?>
     <?php
-    // $url = require("./.env");
+    $url = "http://localhost:3000/";
     ?>
     <!-- Api nhan vien -->
     <?php $ch = require("init_curl.php");
-    curl_setopt($ch, CURLOPT_URL, "http://localhost:3000/nhanvien/getallnhanvien");
+    curl_setopt($ch, CURLOPT_URL, $url . "nhanvien/getallnhanvien");
     $reposn = curl_exec($ch);
     curl_close($ch);
     $data = json_decode($reposn, true); ?>
     <!-- Api don hang -->
     <?php $ch1 = require("init_curl.php");
-    curl_setopt($ch1, CURLOPT_URL, "http://localhost:3000/donhang/getall");
+    curl_setopt($ch1, CURLOPT_URL,  $url . "donhang/getall");
     $reposn1 = curl_exec($ch1);
     curl_close($ch1);
     $data1 = json_decode($reposn1, true); ?>
     <!-- Api kho -->
     <?php $chk = require("init_curl.php");
-    curl_setopt($chk, CURLOPT_URL, "http://localhost:3000/phieuchuyenkho/getallkho");
+    curl_setopt($chk, CURLOPT_URL,  $url . "phieuchuyenkho/getallkho");
     $reposnk = curl_exec($chk);
     curl_close($chk);
     $datak = json_decode($reposnk, true); ?>
     <!-- Api trang thai -->
     <?php $chtt = require("init_curl.php");
-    curl_setopt($chtt, CURLOPT_URL, "http://localhost:3000/trangthai/getall");
+    curl_setopt($chtt, CURLOPT_URL,  $url . "trangthai/getall");
     $reposntt = curl_exec($chtt);
     curl_close($chtt);
     $datatt = json_decode($reposntt, true); ?>
@@ -225,8 +197,7 @@
                                     <input type="text" class="form-control">
                                 </div>
                                 <div class=" col-md-4 mb-3">
-
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="thetich" name="thetich" value="">
                                 </div>
                             </div>
                             <div class=" row mx-2">
@@ -239,11 +210,10 @@
                             </div>
                             <div class="row mx-2  mb-4">
                                 <div class="col-md-4 mb-3">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" value=<?php echo 10 * 6 ?>>
                                 </div>
                                 <div class="col-md-4 mb-3">
-
-                                    <input type="date" class="form-control">
+                                    <input type="date" class="form-control" value="">
                                 </div>
                             </div>
                         </div>
@@ -313,6 +283,12 @@
 </body>
 
 </html>
+<?php
+// echo '<script >
+// var tt= document.getElementById(thetich);
+// </script>';
+// $tt =
+?>
 <!-- thong bao delete -->
 <?php
 if (isset($_GET['checkDelete']) && $_GET['checkDelete'] > 0) {

@@ -7,6 +7,7 @@ session_start();
 <?php include "layout/head.php" ?>
 
 <body>
+    <?php include "./controler/delectedDonHang.php" ?>
     <?php
     $ch = require("init_curl.php");
     curl_setopt($ch, CURLOPT_URL, "http://localhost:3000/donhang/getall");
@@ -27,9 +28,6 @@ session_start();
 
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
-
-
-
         </div>
         <div class="card-box mb-30">
             <div class="page-header">
@@ -43,7 +41,7 @@ session_start();
                 <h4 class="text-blue h4">Danh sách đơn hàng</h4>
             </div>
             <div class="pb-20">
-                <form method="get" action="./controler/delectedDonHang.php">
+                <form method="get" action="">
                     <table class="data-table table stripe hover nowrap">
                         <thead>
                             <tr>
@@ -78,7 +76,7 @@ session_start();
                         </tbody>
                     </table>
                     <div class="page-header">
-                        <input id="submit" name="submit" type="submit" class="btn btn-info" value="Delete Selected Row(s)" />
+                        <input id="submit" name="submit" type="submit" class="btn btn-info" onclick="return confirm('Ban co chac la muon xoa du lieu')" value=" Delete Selected Row(s)" />
                     </div>
                 </form>
             </div>
@@ -114,15 +112,4 @@ session_start();
 
 <!-- thong bao delete -->
 <?php
-if (isset($_GET['checkDelete']) && $_GET['checkDelete'] > 0) {
-    $message = "Bạn đã xóa thành công";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-} else if (isset($_GET['checkUpdate']) && $_GET['checkUpdate'] > 0) {
-    $message = "Bạn đã cập nhật thành công";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-} else if (isset($_GET['action']) && $_GET['action'] == "error_delete_exists") {
-    $message = "Thể loại còn sách không thể xóa!";
-    echo "<script type='text/javascript'>alert('$message');</script>";
-}
-
 ?>

@@ -1,15 +1,12 @@
-<?php
-?>
-<?php
-include("auth.php"); ?>
 <!DOCTYPE html>
 <html>
-
+<?php
+include("auth.php");
+?>
 <?php include "layout/head.php" ?>
 
 <body>
-	<?php session_start();
-	$sdt = $_SESSION['sdt']; ?>
+	<!--  -->
 	<?php include "./layout/pre-loader.php" ?>
 	<?php include "./layout/header.php" ?>
 
